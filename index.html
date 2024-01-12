@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Modern Calculator</title>
+  <title>Fancy Calculator</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f4f4;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f0f0f0;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -16,41 +16,46 @@
     }
 
     #calculator {
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      width: 300px;
-      overflow: hidden;
+      background-color: #333;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      width: 400px;
+      padding: 20px;
     }
 
     input {
-      width: 100%;
+      width: calc(100% - 20px);
       padding: 15px;
-      font-size: 18px;
+      font-size: 24px;
       border: none;
+      border-radius: 5px;
+      margin-bottom: 10px;
       outline: none;
+      background-color: #444;
+      color: #fff;
     }
 
     button {
       width: 23.5%;
       padding: 15px;
-      font-size: 16px;
+      font-size: 20px;
       border: none;
+      border-radius: 5px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     button:hover {
-      background-color: #e1e1e1;
+      background-color: #555;
     }
 
     button.operator {
-      background-color: #ff9500;
+      background-color: #ff8c00;
       color: #fff;
     }
 
     button.operator:hover {
-      background-color: #d18100;
+      background-color: #e07b00;
     }
 
     button.equal {
@@ -60,6 +65,15 @@
 
     button.equal:hover {
       background-color: #45a049;
+    }
+
+    button.clear {
+      background-color: #e74c3c;
+      color: #fff;
+    }
+
+    button.clear:hover {
+      background-color: #d64536;
     }
   </style>
 </head>
@@ -81,7 +95,7 @@
     <button onclick="appendToDisplay('0')">0</button>
     <button class="equal" onclick="calculate()">=</button>
     <button class="operator" onclick="appendToDisplay('/')">/</button>
-    <button onclick="clearDisplay()">C</button>
+    <button class="clear" onclick="clearDisplay()">C</button>
   </div>
 
   <script>
